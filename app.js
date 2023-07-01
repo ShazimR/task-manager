@@ -19,8 +19,8 @@ app.use('/api/v1/tasks', tasks);
 const start = async () => {
     try {
         await connectDB();
-        app.listen(process.env.PORT, () => {
-            console.log(`App is listening on port: ${process.env.PORT}`);
+        app.listen(process.env.PORT, process.env.HOST, () => {
+            console.log(`App is listening at: http://${process.env.HOST}:${process.env.PORT}`);
         });
     } catch (error) {
         console.log(error);
